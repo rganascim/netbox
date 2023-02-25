@@ -21,7 +21,18 @@ class PluginMenu:
 
     @property
     def name(self):
-        return self.label.replace(' ', '_')
+        special_chars = [
+            ' ', '*', '/', '?', '>', '<', '\\', '|', '"', ':',
+            ';', ',', '.', '#', '+', '=', '!', '@', '$', '%',
+            '^', '&', '(', ')', '[', ']', '{', '}', '`', '~'
+        ]
+        new_name = ''
+        for char in self.label:
+            if char in special_chars:
+                new_name += '_'
+            else:
+                new_name += char
+        return new_name
 
 
 class PluginMenuItem:
