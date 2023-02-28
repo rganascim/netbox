@@ -2504,7 +2504,7 @@ class InterfaceListView(generic.ObjectListView):
     filterset = filtersets.InterfaceFilterSet
     filterset_form = forms.InterfaceFilterForm
     table = tables.InterfaceTable
-    actions = ('import', 'export', 'bulk_edit', 'bulk_delete')
+    actions = ('import', 'export', 'bulk_edit', 'bulk_delete', 'bulk_rename')
 
 
 @register_model_view(Interface)

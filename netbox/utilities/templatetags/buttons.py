@@ -120,3 +120,17 @@ def bulk_delete_button(model, action='bulk_delete', query_params=None):
     return {
         'url': url,
     }
+
+
+@register.inclusion_tag('buttons/bulk_rename.html')
+def bulk_rename_button(model, action='bulk_rename', query_params=None):
+    try:
+        url = reverse(get_viewname(model, action))
+        if query_params:
+            url = f'{url}?{query_params.urlencode()}'
+    except NoReverseMatch:
+        url = None
+
+    return {
+        'url': url,
+    }

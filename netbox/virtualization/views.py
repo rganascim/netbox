@@ -436,7 +436,7 @@ class VMInterfaceListView(generic.ObjectListView):
     filterset = filtersets.VMInterfaceFilterSet
     filterset_form = forms.VMInterfaceFilterForm
     table = tables.VMInterfaceTable
-    actions = ('import', 'export', 'bulk_edit', 'bulk_delete')
+    actions = ('import', 'export', 'bulk_edit', 'bulk_delete', 'bulk_rename')
 
 
 @register_model_view(VMInterface)
